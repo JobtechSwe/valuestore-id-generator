@@ -8,7 +8,7 @@
 
 (defn generate-new-id []
   "Specify format and length of nano ID"
-  (base-59-nano-id 10)
+  (base-58-nano-id 10)
   )
 
 (defn add-underscore [id]
