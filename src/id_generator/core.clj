@@ -4,7 +4,7 @@
     [nano-id.custom :refer [generate]])
   )
 
-(def base-59-nano-id (generate "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"))
+(def base-58-nano-id (generate "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"))
 
 (defn generate-new-id []
   "Specify format and length of nano ID"
@@ -22,7 +22,7 @@
 
 (defn get-ids []
   "Get specific number of IDs to generate"
-  (set (take 30000 (repeatedly generate-new-id)))
+  (set (take 30000 (repeatedly generate-new-id-with-underscore)))
   )
 
 (defn write-ids-to-file! [ids]
